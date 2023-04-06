@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var userName : String = "Dinith"
+    @State var jobTitle : String
 
     var body: some View {
         VStack(alignment:.leading){
@@ -37,9 +38,11 @@ struct HomeView: View {
             SerachBar()
             ScrollView(.horizontal,showsIndicators: false){
                 HStack(spacing: 20){
-                    LatestJobView()
-                    LatestJobView()
-                    LatestJobView()
+                    LatestJobView(jobTitle: "UI UX Engineer")
+                    LatestJobView(jobTitle: "UI UX Engineer")
+                    LatestJobView(jobTitle: "UI UX Engineer")
+                    
+                  
                     Spacer()
                     
                     
@@ -80,8 +83,9 @@ struct SerachBar:View{
 }
 
 struct HomeView_Previews: PreviewProvider {
+    static let jobTitle = "UI UX Engineer"
     static var previews: some View {
-        HomeView()
+        HomeView(jobTitle: jobTitle)
     }
 }
 
