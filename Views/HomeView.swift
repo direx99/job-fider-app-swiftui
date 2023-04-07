@@ -70,7 +70,8 @@ struct SerachBar:View{
                         .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 2)
+                                .stroke(Color.gray, lineWidth: 1)
+                                .padding(1)
                         )
                         .padding(.vertical)
             
