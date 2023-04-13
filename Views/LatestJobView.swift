@@ -12,6 +12,7 @@ struct LatestJobView: View {
     var body: some View {
         VStack{
             
+            
             VStack(alignment:.leading){
                 Group{
                     HStack{

@@ -36,18 +36,39 @@ struct HomeView: View {
 
             }
             SerachBar()
+            Text("Latest Job")
+                .font(.title2)
+                .padding(5)
             ScrollView(.horizontal,showsIndicators: false){
                 HStack(spacing: 20){
                     LatestJobView(jobTitle: "UI UX Engineer")
                     LatestJobView(jobTitle: "UI UX Engineer")
                     LatestJobView(jobTitle: "UI UX Engineer")
-                    
-                  
+                   
                     Spacer()
                     
                     
+                   
+                }
+               
+            }
+            Text("Recently Searched")
+                .font(.title2)
+                .padding(5)
+            
+            Group{
+                VStack{
+                }
+                VStack{
+                }
+                VStack{
                 }
             }
+            .frame(height: 80)
+            .frame(maxWidth: .infinity)
+            .background(Color.gray)
+            .cornerRadius(15)
+
             Spacer()
 
             

@@ -15,6 +15,21 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabView{
+            ContentView()
+                .tabItem {
+                   Image(systemName: "heart")
+                }
+            
+            LatestJobView(jobTitle: "")
+                .tabItem {
+                   Image(systemName: "heart")
+                }
+           
+            
+            
+        }
+        .accentColor(.black)
+        
     }
 }
