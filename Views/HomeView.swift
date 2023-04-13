@@ -57,19 +57,9 @@ struct HomeView: View {
                 .padding(5)
             
             Group{
-                VStack{
-                }
-                VStack{
-                }
-                VStack{
-                }
+                RecentSearchView(jobTitle: "Software Developer")
+                RecentSearchView(jobTitle: "QA Engineer")
             }
-            .frame(height: 80)
-            .frame(maxWidth: .infinity)
-            .background(Color.gray)
-            .cornerRadius(15)
-
-            Spacer()
 
             
         }
