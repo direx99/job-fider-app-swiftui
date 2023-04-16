@@ -8,28 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = 3
     var body: some View {
-        HomeView (jobTitle: "")
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabView{
-            ContentView()
+        
+        TabView(selection: $selectedTab) {
+            HomeView( jobTitle: "")
                 .tabItem {
-                   Image(systemName: "heart")
+                    Image(systemName: "house.fill")
+                        
                 }
-            
-            LatestJobView(jobTitle: "")
-                .tabItem {
-                   Image(systemName: "heart")
+                .tag(1)
+          
+            HomeView( jobTitle: "")
+             .tabItem {
+                    Image(systemName: "person")
+                       
                 }
+                .tag(0)
+            HomeView( jobTitle: "")
+         .tabItem {
+                    Image(systemName: "cart")
+                       
+                }
+                .tag(0)
+            HomeView( jobTitle: "")
+          .tabItem {
+                    Image(systemName: "person")
+                       
+                }
+                .tag(3)
            
-            
-            
         }
         .accentColor(.black)
         
+        
+        
+        
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+       
+            ContentView()
+                
     }
 }

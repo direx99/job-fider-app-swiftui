@@ -31,13 +31,13 @@ struct LatestJobView: View {
                         .scaledToFit()
 
                     Text("\(jobTitle)")
-                        .font(.title3)
+                        .font(.system(size: 14))
                         .fontWeight(.semibold)
                     
 
                     Text("Microsft")
                         .foregroundColor(.gray)
-                        .font(.body)
+                        .font(.system(size: 12))
                         .fontWeight(.semibold)
                         .padding(.bottom,5)
 
@@ -47,10 +47,9 @@ struct LatestJobView: View {
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(Color.gray)
-                            .frame(width: 12, height:12)
+                            .frame(width: 10, height:10)
                         Text("Colombo 07")
-                            .foregroundColor(.gray)
-                            .font(.caption)
+                            .font(.system(size: 10))
                             .fontWeight(.semibold)
                     }
                     
@@ -60,14 +59,14 @@ struct LatestJobView: View {
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(Color.gray)
-                            .frame(width: 12, height:12)
-                        Text("Colombo 07")
-                            .foregroundColor(.gray)
-                            .font(.caption)
+                            .frame(width: 10, height:10)
+                        Text("Full-Time")
+                            .font(.system(size: 10))
                             .fontWeight(.semibold)
 
                            
                     }
+                    .padding(.top,-4)
 
                 }
 
@@ -77,11 +76,11 @@ struct LatestJobView: View {
 
 
             }
-            .frame(width: 160,height: 160)
+            .frame(width: 140,height:140)
             .padding(15)
             .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.gray, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 0.7)
                     .padding(1)
 
             )

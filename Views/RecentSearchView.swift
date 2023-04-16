@@ -29,24 +29,24 @@ struct RecentSearchView: View {
                         }
                         VStack(alignment: .leading){
                             Text("\(jobTitle)")
-                                .font(.system(size: 16))
+                                .font(.system(size: 14))
                                 .fontWeight(.semibold)
                             
                             
                             Text("Microsft")
                                 .foregroundColor(.gray)
-                                .font(.system(size: 11))
+                                .font(.system(size: 9))
                                 .fontWeight(.semibold)
                             
                             HStack(spacing:10){
                                 Text("Full-Time")
-                                    .font(.system(size: 8))
+                                    .font(.system(size: 6))
                                     .padding(.horizontal,10)
                                     .padding(.vertical,5)
-                                    .background(Color.gray)
+                                    .background(Color("LightGray"))
                                     .cornerRadius(5)
                                 Text("2 Hours Ago")
-                                    .font(.system(size: 8))
+                                    .font(.system(size: 6))
                                     .padding(.horizontal,10)
                                     .padding(.vertical,5)
                                     .background(Color("newbox"))
@@ -56,6 +56,8 @@ struct RecentSearchView: View {
                                 
                                 
                             }
+                            .padding(.top,-4)
+
                             
                         }
                         .padding(.leading,10)
@@ -67,12 +69,13 @@ struct RecentSearchView: View {
                                 .resizable()
                                 .frame(width: 10,height: 13)
                                 .foregroundColor(Color.gray)
-                                .padding(.top,-30)
+                                .padding(.top,-25)
                             
                             
                         }
                         
                     }
+
                     
                     
                     
@@ -91,7 +94,7 @@ struct RecentSearchView: View {
             .padding(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.gray, lineWidth: 0.7)
                 
                 
             )

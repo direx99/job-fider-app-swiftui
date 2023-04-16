@@ -17,12 +17,12 @@ struct HomeView: View {
             HStack(alignment: .top){
                 VStack(alignment:.leading){
                     Text("Hey \(userName)")
-                        .font(.title2)
+                        .font(.system(size: 20).bold())
                         .fontWeight(.semibold)
                         .padding(.bottom,-5)
                       
                     Text("find your dream job here")
-                        .fontWeight(.semibold)
+                        .font(.system(size: 14).bold())
                         .foregroundColor(.gray)
                 }
                 
@@ -32,15 +32,16 @@ struct HomeView: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(Color.gray)
-                    .frame(width: 30,height: 30)
-
+                    .frame(width: 24,height: 24)
+                    .padding(.top,5)
             }
             SerachBar()
             Text("Latest Job")
-                .font(.title2)
+                .font(.system(size: 16).bold())
                 .padding(5)
+                .padding(.bottom,10)
             ScrollView(.horizontal,showsIndicators: false){
-                HStack(spacing: 20){
+                HStack(spacing: 10){
                     LatestJobView(jobTitle: "UI UX Engineer")
                     LatestJobView(jobTitle: "UI UX Engineer")
                     LatestJobView(jobTitle: "UI UX Engineer")
@@ -53,19 +54,25 @@ struct HomeView: View {
                
             }
             Text("Recently Searched")
-                .font(.title2)
+                .font(.system(size: 16).bold())
                 .padding(5)
-            
-            Group{
-                RecentSearchView(jobTitle: "Software Developer")
-                RecentSearchView(jobTitle: "QA Engineer")
-            }
+                .padding(.top,25)
+                .padding(.bottom,10)
 
             
+            Group{
+                VStack(spacing:15){
+                    RecentSearchView(jobTitle: "Software Developer")
+                    RecentSearchView(jobTitle: "QA Engineer")
+                }
+            }
+
+            Spacer()
         }
+        
         .padding(30)
     }
-        
+
 }
 
 struct SerachBar:View{
@@ -76,12 +83,13 @@ struct SerachBar:View{
             
             TextField("Search your job here", text: $userName)
                         .background(Color.white)
-                        .cornerRadius(20)
+                        .font(.system(size: 15).bold())
                         .leadingImage(systemName: "magnifyingglass")
-                        .padding()
+                        .padding(13)
+            
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 1)
+                                .stroke(Color.gray, lineWidth: 0.7)
                                 .padding(1)
                         )
                         .padding(.vertical)
@@ -93,13 +101,13 @@ struct SerachBar:View{
         }
     }
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static let jobTitle = "UI UX Engineer"
-    static var previews: some View {
-        HomeView(jobTitle: jobTitle)
-    }
-}
+//
+//struct HomeView_Previews: PreviewProvider {
+//    static let jobTitle = "UI UX Engineer"
+//    static var previews: some View {
+//        HomeView(jobTitle: "jobTitle")
+//    }
+//}
 
 
 extension View {
