@@ -13,6 +13,8 @@ struct HomeView: View {
     @State var jobTitle : String
 
     var body: some View {
+        NavigationStack{
+
         VStack(alignment:.leading){
             HStack(alignment: .top){
                 VStack(alignment:.leading){
@@ -42,9 +44,13 @@ struct HomeView: View {
                 .padding(.bottom,10)
             ScrollView(.horizontal,showsIndicators: false){
                 HStack(spacing: 10){
-                    LatestJobView(jobTitle: "UI UX Engineer")
-                    LatestJobView(jobTitle: "UI UX Engineer")
-                    LatestJobView(jobTitle: "UI UX Engineer")
+                        NavigationLink(destination: JobView()) {
+                            LatestJobView(jobTitle: "UI UX Engineer")
+                            LatestJobView(jobTitle: "UI UX Engineer")
+                            LatestJobView(jobTitle: "UI UX Engineer")
+                        }
+                        
+                    
                    
                     Spacer()
                     
@@ -82,21 +88,21 @@ struct SerachBar:View{
         HStack{
             
             TextField("Search your job here", text: $userName)
-                        .background(Color.white)
-                        .font(.system(size: 15).bold())
-                        .leadingImage(systemName: "magnifyingglass")
-                        .padding(13)
+                .background(Color.white)
+                .font(.system(size: 15).bold())
+                .leadingImage(systemName: "magnifyingglass")
+                .padding(13)
             
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 0.7)
-                                .padding(1)
-                        )
-                        .padding(.vertical)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.gray, lineWidth: 0.7)
+                        .padding(1)
+                )
+                .padding(.vertical)
             
-                        
-
             
+            
+        }
             
         }
     }

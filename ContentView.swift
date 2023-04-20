@@ -31,7 +31,7 @@ struct ContentView: View {
                        
                 }
                 .tag(0)
-            HomeView( jobTitle: "")
+            JobView()
           .tabItem {
                     Image(systemName: "person")
                        
