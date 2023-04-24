@@ -12,7 +12,7 @@ struct JobView: View {
     
     var body: some View {
         VStack{
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 VStack(alignment:.leading){
                     HStack(alignment: .top){
                         VStack(alignment:.leading){
@@ -22,18 +22,18 @@ struct JobView: View {
                                 .scaledToFit()
                                 .frame(width: 120)
                             Text("UI UX Designer")
-                                .font(.system(size: 20).weight(.bold))
+                                .font(.system(size: 16).weight(.bold))
                             HStack{
                                 Text("2 Hours ago")
-                                    .font(.system(size: 12))
+                                    .font(.system(size: 10))
                                     .padding(.horizontal,15)
-                                    .padding(.vertical,4)
+                                    .padding(.vertical,3)
                                     .background(Color("newbox"))
                                     .cornerRadius(4)
                                 
                                 Text("• 208 Applicants")
-                                    .bold()
-                                    .padding(.leading)
+                                    .font(.system(size: 12).weight(.bold))
+                                    .padding(.leading,10)
                                 
                                 
                             }
@@ -42,9 +42,39 @@ struct JobView: View {
                                 
                                 
                                 Group{
-                                    Text("• 208 Applicants")
-                                    Text("• 208 Applicants")
-                                    Text("• 208 Applicants")
+                                    
+                                    HStack(spacing:15){
+                                        Image(systemName: "mappin.circle")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 14,height: 14)
+                                        Text("Colombo ,Sri Lanka")
+                                            .font(.system(size: 14).weight(.bold))
+
+                                        Spacer()
+
+                                    }
+                                    HStack(spacing:15){
+                                        Image(systemName: "case")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 14,height: 14)
+                                        Text("Full-Time")
+                                            .font(.system(size: 14).weight(.bold))
+                                        Spacer()
+
+                                    
+                                    }
+                                    HStack(spacing:15){
+                                        Image(systemName: "dollarsign.circle")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 14,height: 14)
+                                        Text("Colombo ,Sri Lanka")
+                                            .font(.system(size: 14).weight(.bold))
+                                        Spacer()
+
+                                    }
                                 }
                                 .padding(.vertical,1)
                                 .foregroundColor(.gray)
@@ -58,24 +88,53 @@ struct JobView: View {
                             .padding(.vertical)
                             
                             Text("Job Reqirements")
-                                .font(.title3)
+                                .font(.system(size: 17).weight(.bold))
                             
                             Group{
-                                Text("• 208 Applicants")
-                                Text("• 208 Applicants")
-                                Text("• 208 Applicants")
+                                
+                                HStack(spacing:15){
+                                    Image(systemName: "mappin.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 14,height: 14)
+                                    Text("Colombo ,Sri Lanka")
+                                        .font(.system(size: 14).weight(.bold))
+                                    Spacer()
+
+                                }
+                                HStack(spacing:15){
+                                    Image(systemName: "case")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 14,height: 14)
+                                    Text("Full-Time")
+                                        .font(.system(size: 14).weight(.bold))
+                                    Spacer()
+
+                                
+                                }
+                                HStack(spacing:15){
+                                    Image(systemName: "dollarsign.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 14,height: 14)
+                                    Text("Colombo ,Sri Lanka")
+                                        .font(.system(size: 14).weight(.bold))
+                                    Spacer()
+
+                                }
                             }
                             .padding(.vertical,1)
                             .foregroundColor(.gray)
                             .bold()
                             
-                            Text("Job Reqirements")
-                                .font(.title3)
-                                .bold()
+                            Text("Job Description")
+                                .font(.system(size: 17).weight(.bold))
                                 .padding(.top,15)
                                 .padding(.bottom,5)
                             
-                            Text("To get started, click the placeholder text and start typing.Use your cover letter to show how your talents and experience will solve a problem or drive results for your future employer. For example, if you say that you work well in a team, give an example of how you used your teamwork skills during your last internship, then show how this experience will benefit the employer.It's all about personalisation. Write a cover letter that uniquely presents the real you and the future impact that only you can make at the company.")
+                            Text("To get started, click the placeholder text and start typing.Use your cover letter to show how your talents and experience will solve a problem or drive results for your future employer. For example, if you say that you work well in a team, give an example of how you used your teamwork skills during your last internship, then show how this experience will benefit the employer.It's all about personalisation. \nWrite a cover letter that uniquely presents the real you and the future impact that only you can make at the company.")
+                                .font(.system(size: 14))
                             
                             
                             
@@ -90,18 +149,13 @@ struct JobView: View {
                 }
                 .padding()
                 
-                //            .sheet(isPresented: $shouldPresentSheet) {
-                //                               print("Sheet dismissed!")
-                //            } content: {
-                //                BottomSheetView()
-                //                    .presentationDetents([.height(100)])
-                //
-                //            }
+               
                 
             }
         }
 
         .toolbar(.hidden, for: .tabBar)
+        .padding()
 
         
 
